@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('users/layout')
 
 @section('content')
 <div class="row">
@@ -27,16 +27,28 @@
     @csrf
   
      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <!-- <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
                 <input type="text" name="name" class="form-control" placeholder="Name">
             </div>
+        </div> -->
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>E-mail:</strong>
+                <input type="email" class="form-control" name="email" placeholder="Email" required></input>
+            </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>email:</strong>
-                <textarea class="form-control" style="height:150px" name="email" placeholder="Email"></textarea>
+                <strong>Password:</strong>
+                <input type="password" class="form-control" name="password" placeholder="Password"></input>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Company:</strong>
+                <input type="text" class="form-control" name="company_id" placeholder="Company_id"></input>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

@@ -15,10 +15,10 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('email', 255)->nullable(false)->change();
+            $table->string('email', 255)->nullable(false);
             $table->dateTime('last_password_redefinition_at')->nullable();
             $table->boolean('email_verified')->default(false);
-            $table->string('password', 255)->nullable(false)->change();
+            $table->string('password', 255)->nullable(false);
             $table->dateTime('created_at')->useCurrent();
             $table->dateTime('last_updated_at')->nullable()->useCurrentOnUpdate();
             $table->foreignId('company_id')->constrained('companies', 'id');

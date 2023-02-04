@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         $users = User::latest()->paginate(5);
     
-        return view('index',compact('users'))
+        return view('users/index',compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('users/create');
     }
 
     /**
@@ -39,13 +39,13 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            //'name' => 'required',
             'email' => 'required',
         ]);
     
         User::create($request->all());
      
-        return redirect()->route('index')
+        return redirect()->route('users.index')
                         ->with('success','User created successfully.');
     }
 
@@ -57,7 +57,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('show',compact('user'));
+        return view('users/show',compact('user'));
     }
 
     /**
@@ -68,7 +68,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('edit',compact('user'));
+        return view('users/edit',compact('user'));
     }
 
     /**
@@ -81,7 +81,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'name' => 'required',
+            //'name' => 'required',
             'email' => 'required',
         ]);
     
@@ -101,7 +101,7 @@ class UserController extends Controller
     {
         $user->delete();
     
-        return redirect()->route('index')
+        return redirect()->route('users.index')
                         ->with('success','User deleted successfully');
     }
 }
