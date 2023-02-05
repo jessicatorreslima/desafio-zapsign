@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Company;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -15,8 +16,9 @@ class UserController extends Controller
     public function index()
     {
         $users = User::latest()->paginate(5);
+        $companies = Company::all();
     
-        return view('users/index',compact('users'))
+        return view('users/index',compact('users','companies'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +29,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users/create');
+        $companies = Company::all();
+        return view('users/create',compact('companies'));
     }
 
     /**
