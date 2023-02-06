@@ -48,7 +48,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Company:</strong>
-                <select class="form-control" name="company_id">
+                <select class="form-select" name="company_id">
                     @foreach ($companies as $company)
                         <option value="{{ $company->id }}">{{ $company->id }}</option>
                     @endforeach
