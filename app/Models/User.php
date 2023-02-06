@@ -14,7 +14,7 @@ class User extends Authenticatable
     
     public $timestamps = false;
 
-    public function category()
+    public function companies()
     {
         return $this->belongsTo(Company::class);
     }
