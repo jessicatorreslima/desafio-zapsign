@@ -21,15 +21,15 @@
     <table class="table table-bordered">
         <tr>
             <th>Id</th>
-            <th>Name</th>
             <th>Email</th>
+            <th>Company</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($users as $user)
         <tr>
-            <td>{{ ++$i }}</td>
-            <td>{{ $user->name }}</td>
+            <td>{{ $user->id }}</td>
             <td>{{ $user->email }}</td>
+            <td>{{ $user->company_id }}</td>
             <td>
                 <form action="{{ route('users.destroy',$user->id) }}" method="POST">
    
@@ -47,6 +47,6 @@
         @endforeach
     </table>
   
-    {!! $users->links() !!}
+    {!! $users->links('pagination.default') !!}
       
 @endsection
