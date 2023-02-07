@@ -40,8 +40,7 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            //'name' => 'required',
-            'email' => 'required',
+            'name' => 'required',
         ]);
     
         Company::create($request->all());

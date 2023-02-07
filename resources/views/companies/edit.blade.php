@@ -28,18 +28,34 @@
         @method('PUT')
    
          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Name:</strong>
-                    <input type="text" name="name" value="{{ $company->name }}" class="form-control" placeholder="Name">
-                </div>
+         <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Name:</strong>
+                <input type="text" name="name" class="form-control" placeholder="Name" value="{{ $company->name }}">
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Email:</strong>
-                    <textarea class="form-control" style="height:150px" name="email" placeholder="Email">{{ $company->email }}</textarea>
-                </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Time zone:</strong>
+                <input type="text" class="form-control" name="email" placeholder="timezone" value="{{ $company->timezone }}"></input>
             </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Language:</strong>
+                <select class="form-select" name="lang">
+                    <option value="en" selected="{{ $company->lang == 'en' }}">en</option>
+                    <option value="es" selected="{{ $company->lang == 'es' }}">es</option>
+                    <option value="pt" selected="{{ $company->lang == 'pt' }}">pt</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Created by:</strong>
+                <input type="text" class="form-control" name="created_by" placeholder="Created by" value="{{ $company->created_by }}" disabled></input>
+            </div>
+        </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
