@@ -22,14 +22,18 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Email</th>
+            <th>Time zone</th>
+            <th>Language</th>
+            <th>Created by</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($companies as $company)
         <tr>
-            <td>{{ ++$i }}</td>
+            <td>{{ $company->id }}</td>
             <td>{{ $company->name }}</td>
-            <td>{{ $company->email }}</td>
+            <td>{{ $company->timezone }}</td>
+            <td>{{ $company->lang }}</td>
+            <td>{{ $company->created_by }}</td>
             <td>
                 <form action="{{ route('companies.destroy',$company->id) }}" method="POST">
    
@@ -47,6 +51,6 @@
         @endforeach
     </table>
   
-    {!! $companies->links() !!}
+    {!! $companies->links('pagination.default') !!}
       
 @endsection
