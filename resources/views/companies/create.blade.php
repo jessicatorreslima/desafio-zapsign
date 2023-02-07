@@ -36,7 +36,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Time zone:</strong>
-                <input type="timezone" class="form-control" name="email" placeholder="Timezone" value="-03:00"></input>
+                <input type="text" class="form-control" name="timezone" placeholder="Timezone" value="-03:00"></input>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
