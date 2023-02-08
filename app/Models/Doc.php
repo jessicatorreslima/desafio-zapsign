@@ -21,5 +21,6 @@ class Doc extends Model
         'date_limit_to_sign',
         'company_id',
         'created_by',
+        'signed'
     ];
 }

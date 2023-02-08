@@ -28,16 +28,16 @@
         @method('PUT')
    
          <div class="row">
-            <!-- <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Name:</strong>
-                    <input type="text" name="name" value="{{ $doc->name }}" class="form-control" placeholder="Name">
-                </div>
-            </div> -->
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>E-mail:</strong>
-                    <input type="email" class="form-control" name="email" placeholder="Email" value="{{ $doc->email }}" required></input>
+                    <strong>Name:</strong>
+                    <input type="text" name="name" class="form-control" placeholder="Name" value="{{ $doc->name }}">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Date limit to sign:</strong>
+                    <input type="date" class="form-control" name="date_limit_to_sign" placeholder="" value="{{ substr($doc->date_limit_to_sign,0,10) }}"></input>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -46,6 +46,16 @@
                     <select class="form-select" name="company_id">
                         @foreach ($companies as $company)
                             <option value="{{ $company->id }}">{{ $company->id }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Created by:</strong>
+                    <select class="form-select" name="created_by">
+                        @foreach ($users as $user)
+                            <option value="{{ $user->id }}">{{ $user->id }}</option>
                         @endforeach
                     </select>
                 </div>

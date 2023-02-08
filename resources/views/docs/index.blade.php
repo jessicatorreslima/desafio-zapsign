@@ -11,6 +11,17 @@
             </div>
         </div>
     </div>
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+        There were some problems with your input.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
    
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -34,8 +45,20 @@
             <td>{{ $doc->id }}</td>
             <td>{{ $doc->name }}</td>
             <td>{{ $doc->deleted }}</td>
-            <td>{{ $doc->date_limit_to_sign }}</td>
-            <td>{{ $doc->signed }}</td>
+            <td>{{ substr($doc->date_limit_to_sign,0,10) }}</td>
+            <td>
+                {{ $doc->signed ? 'Yes ' : 'No '}}
+                @if ($doc->signed == false)
+                    <form action="{{ route('docs.update',$doc->id) }}" method="POST" style="display:inline  ">
+                        @csrf
+                        @method('PUT')
+                        <input type="hidden" name="signed" class="form-control" value=1>
+                        <button type="submit" class="btn btn-success">Sign</button>
+                    </form>
+                @else
+                    <button type="submit" class="btn btn-success" disabled>Sign</button>
+                @endif
+            </td>
             <td>{{ $doc->company_id }}</td>
             <td>{{ $doc->created_by }}</td>
             <td>

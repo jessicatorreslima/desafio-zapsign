@@ -88,10 +88,9 @@ class DocController extends Controller
      */
     public function update(Request $request, Doc $doc)
     {
-        $request->validate([
+        /* $request->validate([
             'name' => 'required',
-            //'email' => 'required',
-        ]);
+        ]); */
     
         $doc->update($request->all());
     
