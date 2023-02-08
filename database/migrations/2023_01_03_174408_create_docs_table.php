@@ -15,13 +15,13 @@ class CreateDocsTable extends Migration
     {
         Schema::create('docs', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255)->nullable(false)->change();
+            $table->string('name', 255)->nullable(false);
             $table->boolean('deleted')->default(false);
             $table->dateTime('created_at')->useCurrent();
             $table->dateTime('last_updated_at')->nullable()->useCurrentOnUpdate();
             $table->dateTime('date_limit_to_sign');
             $table->boolean('signed')->default(false);
-            $table->foreignId('company')->constrained('companies', 'id');
+            $table->foreignId('company_id')->constrained('companies', 'id');
             $table->foreignId('created_by')->constrained('users', 'id');
 
         });

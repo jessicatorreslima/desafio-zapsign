@@ -1,13 +1,13 @@
-@extends('companies/layout')
+@extends('docs/layout')
   
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show Company</h2>
+                <h2> Show Doc</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('companies.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('docs.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -16,37 +16,49 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Id:</strong>
-                {{ $company->id }}
+                {{ $doc->id }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                {{ $company->name }}
+                {{ $doc->name }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Deleted:</strong>
+                {{ $doc->deleted ? 'Yes' : 'No' }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Created at:</strong>
-                {{ $company->created_at }}
+                {{ $doc->created_at }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Last updated at:</strong>
-                {{ $company->last_updated_at != NULL ? $company->last_updated_at : 'never' }}
+                <strong>Date limit to sign:</strong>
+                {{ $doc->date_limit_to_sign }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Time zone:</strong>
-                {{ $company->timezone }}
+                <strong>Signed:</strong>
+                {{ $doc->signed }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Language:</strong>
-                {{ $company->lang }}
+                <strong>Company:</strong>
+                {{ $doc->company_id }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Created at:</strong>
+                {{ $doc->created_at }}
             </div>
         </div>
     </div>

@@ -44,9 +44,9 @@
             <div class="form-group">
                 <strong>Language:</strong>
                 <select class="form-select" name="lang">
-                    <option value="en" selected="{{ $company->lang == 'en' }}">en</option>
-                    <option value="es" selected="{{ $company->lang == 'es' }}">es</option>
-                    <option value="pt" selected="{{ $company->lang == 'pt' }}">pt</option>
+                    <option value="en" selected="{{ $company->lang == 'en' ? 'true' : 'false' }}">en</option>
+                    <option value="es" selected="{{ $company->lang == 'es' ? 'true' : 'false' }}">es</option>
+                    <option value="pt" selected="{{ $company->lang == 'pt' ? 'true' : 'false' }}">pt</option>
                 </select>
             </div>
         </div>
