@@ -40,13 +40,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Date limit to sign:</strong>
-                {{ $doc->date_limit_to_sign }}
+                {{ substr($doc->date_limit_to_sign,0,10) }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Signed:</strong>
-                {{ $doc->signed }}
+                {{ $doc->signed ? 'Yes' : 'No'}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -59,6 +59,12 @@
             <div class="form-group">
                 <strong>Created at:</strong>
                 {{ $doc->created_at }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Last updated at:</strong>
+                {{ $doc->last_updated_at ? $doc->last_updated_at : 'never'}}
             </div>
         </div>
     </div>

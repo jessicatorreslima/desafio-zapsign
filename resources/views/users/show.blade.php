@@ -49,5 +49,11 @@
                 {{ $user->created_at }}
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Last updated at:</strong>
+                {{ $user->last_updated_at ? $user->last_updated_at : 'never'}}
+            </div>
+        </div>
     </div>
 @endsection
