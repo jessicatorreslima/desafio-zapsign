@@ -52,7 +52,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Created by:</strong>
-                <input type="text" class="form-control" name="created_by" placeholder=""></input>
+                <input type="number" class="form-control" name="created_by" placeholder=""></input>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
