@@ -10,6 +10,7 @@
 - Substitua as informações da sua DB_CONNECTION no arquivo .env (linhas 11-16)
 - Execute o comando `composer install` para instalar as dependências;
 - Execute o comando `php artisan migrate` para criar as tabelas no banco;
+- Execute o comando `php artisan db:seed` para criar os registros de teste no banco;
 - Execute o comando `php artisan serve` para subir o servidor;
 - Acesse o servidor de desenvolvimento através do endereço [http://127.0.0.1:8000]. 
 
