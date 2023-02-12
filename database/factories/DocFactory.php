@@ -27,8 +27,8 @@ class DocFactory extends Factory
             //'name' => $this->php('/temp', '/temp', false),
             'name' => $this->faker->lexify('???????????').'.pdf',
             'date_limit_to_sign' => $this->faker->dateTimeThisYear(),
-            'company_id' => Company::factory(),
-            'created_by' => User::factory()
+            'company_id' => Company::pluck('id')->random(),
+            'created_by' => User::pluck('id')->random()
         ];
     }
 }
